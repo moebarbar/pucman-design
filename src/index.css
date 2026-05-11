@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #000000;
+    color: #FFFFFF;
+    font-family: 'Space Mono', ui-monospace, monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Press Start 2P', system-ui, monospace;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  *:focus-visible {
+    outline: 3px solid #FFD166;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .pixel-border {
+    border: 2px dashed #FFD166;
+  }
+
+  .pixel-card {
+    @apply bg-surface border-2 border-pellet shadow-pixel p-3;
+  }
+
+  .pixel-btn {
+    @apply font-pixel text-xs uppercase tracking-wider px-3 py-2 border-2 border-black shadow-pixel transition-transform;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .pixel-btn:hover:not(:disabled) {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #000000;
+  }
+
+  .pixel-btn:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 #000000;
+  }
+
+  .pixel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .dotted-rule {
+    background-image: radial-gradient(circle, #FFD166 1.5px, transparent 1.5px);
+    background-size: 16px 4px;
+    background-repeat: repeat-x;
+    background-position: center;
+    height: 4px;
+  }
+}
+
+@keyframes chomp {
+  0%, 100% {
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%, 100% 0, 0 0, 0 100%, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(100% 60%, 44% 50%, 100% 40%, 100% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+
+.pacman-icon {
+  animation: chomp 0.4s linear infinite;
+}
