@@ -33,12 +33,21 @@ src/
   App.tsx              # demo page wiring everything together
   index.css            # tailwind layers + pacman base styles
   components/
-    Button.tsx         # primary / secondary / danger / ghost variants
+    Alert.tsx          # success / warning / danger / info banners
     Badge.tsx          # success / warning / danger / info tones
+    Button.tsx         # primary / secondary / danger / ghost variants
     Card.tsx           # dotted-bordered surface
-    Input.tsx          # pixel-font text input
-    PacmanLogo.tsx     # animated chomping pacman SVG
     GhostRow.tsx       # Blinky / Pinky / Inky / Clyde
+    Input.tsx          # pixel-font text input
+    Maze.tsx           # ASCII Pac-Man maze art
+    Modal.tsx          # accessible dialog (esc-to-close, focus trap-lite)
+    PacmanLogo.tsx     # animated chomping pacman SVG
+    Progress.tsx       # 10-block pixel progress bar
+    Scoreboard.tsx     # high-score table
+    Select.tsx         # pixel-font select
+    Switch.tsx         # role=switch toggle
+    Tabs.tsx           # accessible roving-tab tablist
+    Toast.tsx          # live-region toast host (notify via toast-bus.ts)
 tailwind.config.js     # palette, fontFamily, spacing, pixel shadows
 ```
 
